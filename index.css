@@ -1,9 +1,55 @@
-body {    
+/*! General CSS Changes */
+body {
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
-    background-color: #fff;
-    width: 50%;
-    height: 80%;
+h1 {
+    color: white;
+    font-size: 30px;
+}
+
+/*! Index CSS Changes */
+
+#containerIndex {
+  background-color: white;
+  filter: drop-shadow(0 0 3rem rgba(255, 255, 255, 0.5));
+  margin-top: 15px;
+  width: 50%;
+  height: 80%;  
+  display: flex;
+  flex-direction: column;  
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#buttonIndex {
+  color: #fff;
+  font-family: monospace;
+  filter: drop-shadow(0 0 0.5rem #253969);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #253969;
+  border-radius: 8px;  
+  height: 40px;
+  width: 150px;
+  margin: 10px auto 10px auto;
+  cursor: pointer;
+}
+
+#buttonIndex:hover {
+    opacity: 0.3;
+}
+
+/*! Exercises CSS Changes */
+#containerExercise {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 50%;
+  height: 25rem;
 }
