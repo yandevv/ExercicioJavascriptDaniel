@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <title>Exercício 11</title>
+</head>
+
+<script type="text/javascript">
+    function calc(){
+        let diagMaior = parseFloat(document.getElementById('num1').value);
+        let diagMenor = parseFloat(document.getElementById('num2').value);
+
+        document.getElementById('resultadoOp').innerHTML = 'A área deste losango é de: ' + (diagMaior * diagMenor)/2 + 'u²'
+    }
+</script>
+
+<body>
+    <h1>Exercício 11</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Digite o valor da diagonal maior:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Digite o valor da diagonal menor:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>      
+    </div>
+</body>
+</html>

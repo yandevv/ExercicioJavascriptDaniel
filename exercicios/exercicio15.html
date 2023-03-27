@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <title>Exercício 15</title>
+</head>
+
+<script type="text/javascript">
+    function calc() {
+        let salario = parseFloat(document.getElementById('num1').value);
+        let conta1 = parseFloat(document.getElementById('num2').value);
+        let conta2 = parseFloat(document.getElementById('num3').value);
+    
+        let valorContas = (conta1 + conta2) * 1.02;
+        let valorFinal = salario - valorContas;
+    
+        document.getElementById('resultadoOp1').innerHTML = 'O valor somado das contas atrasadas é de (com acréscimo do atraso): R$' + valorContas.toFixed(2);
+        document.getElementById('resultadoOp2').innerHTML = 'O valor final do salário descontado com as contas é de: R$' + valorFinal.toFixed(2);
+    }
+</script>
+
+<body>
+    <h1>Exercício 15</h1>
+    <div id="containerExercise">
+        <div id="input">
+          <h2>Salário:</h2>
+          <input type="number" id="num1" />
+        </div>
+      <div id="input">
+        <h2>Conta atrasada 1:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <div id="input">
+        <h2>Conta atrasada 2:</h2>
+        <input type="number" id="num3" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp1"></h3>
+      <h3 id="resultadoOp2"></h3>
+    </div>
+</body>
+</html>

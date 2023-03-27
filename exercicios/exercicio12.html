@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <title>Exercício 12</title>
+</head>
+
+<script typ="text/javascript">
+    function calc() {
+        let salarioMin = parseFloat(document.getElementById('num1').value);
+        let salarioFunc = parseFloat(document.getElementById('num2').value);
+
+        document.getElementById('resultadoOp').innerHTML = 'Este funcionário ganha ' + salarioFunc/salarioMin + ' salários mínimos.'
+    }
+</script>
+
+<body>
+    <h1>Exercício 12</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Valor salário mínimo:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Valor salário funcionário:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
+</body>
+</html>

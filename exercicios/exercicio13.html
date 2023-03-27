@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <title>Exercício 13</title>
+</head>
+
+<script type="text/javascript">
+    function calc(){
+        let num = parseFloat(document.getElementById('num').value);
+
+        let tabuada1 = num + ' x 0 = 0<br>' + num + ' x 1 = ' + num + '<br>' + num + ' x 2 = ' + num*2 + '<br>' + num + ' x 3 = ' + num*3 + '<br>' + num + ' x 4 = ' + num*4 + '<br>' + num + ' x 5 = ' + num*5
+        let tabuada2 = num + ' x 6 = ' + num*6 + '<br>' + num + ' x 7 = ' + num*7 + '<br>' + num + ' x 8 = ' + num*8 + '<br>' + num + ' x 9 = ' + num*9 + '<br>' + num + ' x 10 = ' + num*10;
+
+        document.getElementById('resultadoOp1').innerHTML = tabuada1;
+        document.getElementById('resultadoOp2').innerHTML = tabuada2;
+    }
+</script>
+
+<body>
+    <h1>Exercício 13</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Digite o número da tabuada:</h2>
+        <input type="number" id="num" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <div id="twoRows">
+          <h3 id="resultadoOp1"></h3>
+          <h3 id="resultadoOp2"></h3>
+      </div>
+    </div>
+</body>
+</html>
