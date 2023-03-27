@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../index.css">
-    <title>Exercício 1</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />    
+    <title>Exercício 2</title>
+  </head>
+
+  <script>
+    function calc() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let n3 = parseFloat(document.getElementById("num3").value);
+
+      document.getElementById("resultadoOp").innerHTML = "O resultado é de: " + n1 * n2 * n3;
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 2</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Número 1:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Número 2:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <div id="input">
+        <h2>Número 3:</h2>
+        <input type="number" id="num3" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
+  </body>
 </html>

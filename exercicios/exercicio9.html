@@ -5,9 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 1</title>
+    <title>Exercício 9</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let altura = parseFloat(document.getElementById('num1').value);
+        let bMenor = parseFloat(document.getElementById('num2').value);
+        let bMaior = parseFloat(document.getElementById('num3').value);
+
+        document.getElementById('resultadoOp').innerHTML = 'O valor da área desse trapézio é de: ' + ((bMaior + bMenor) * altura)/2 + 'u²'
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 9</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Digite o valor da altura:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Digite o valor da base menor:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <div id="input">
+        <h2>Digite o valor da base maior:</h2>
+        <input type="number" id="num3" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>      
+    </div>
 </body>
 </html>

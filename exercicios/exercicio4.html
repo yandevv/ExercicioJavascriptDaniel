@@ -5,9 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 1</title>
+    <title>Exercício 4</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let nota1 = parseFloat(document.getElementById("num1").value);
+        let nota2 = parseFloat(document.getElementById("num2").value);
+
+        document.getElementById("resultadoOp").innerHTML = 'O resultado da média ponderada é de: ' + ((nota1 * 2) + (nota2 * 3)) / 5;
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 4</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Nota 1 (Peso 2):</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Nota 2 (Peso 3):</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
 </body>
 </html>

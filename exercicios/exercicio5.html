@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 1</title>
+    <title>Exercício 5</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let preco = parseFloat(document.getElementById('num1').value);
+
+        document.getElementById('resultadoOp').innerHTML = 'O resultado do desconto da promoção é de: R$' + (preco * 0.9).toFixed(2);
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 5</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Preço produto:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
 </body>
 </html>

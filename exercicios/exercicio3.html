@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../index.css">
-    <title>Exercício 1</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 3</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
     
-</body>
+        document.getElementById("resultadoOp").innerHTML = "O resultado da operação é de: " + (num1 / num2);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 3</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Número 1:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Número 2:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
+  </body>
 </html>
