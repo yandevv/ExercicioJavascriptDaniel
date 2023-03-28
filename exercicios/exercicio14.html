@@ -5,9 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 11</title>
+    <title>Exercício 14</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let dataAniver = new Date(document.getElementById("num1").value);
+        let dataAtual = Date.now();
+        let miliSec = dataAtual - dataAniver;
+        
+        document.getElementById("resultadoOp1").innerHTML = 'Idade desta pessoa em anos: ' + ((((((miliSec/1000)/60)/60)/24)/30)/12).toFixed(2) + ' anos.';
+        document.getElementById("resultadoOp2").innerHTML = 'Idade desta pessoa em meses: ' + (((((miliSec/1000)/60)/60)/24)/30).toFixed(2) + ' meses.';
+        document.getElementById("resultadoOp3").innerHTML = 'Idade desta pessoa em dias: ' + ((((miliSec/1000)/60)/60)/24).toFixed(2) + ' dias.';
+        document.getElementById("resultadoOp4").innerHTML = 'Idade desta pessoa em semanas: ' + (((((miliSec/1000)/60)/60)/24)/7).toFixed(2) + ' semanas.';
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 14</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Sua data de nascimento:</h2>
+        <input type="date" id="num1" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp1"></h3>
+      <h3 id="resultadoOp2"></h3>
+      <h3 id="resultadoOp3"></h3>
+      <h3 id="resultadoOp4"></h3>
+    </div>
 </body>
 </html>

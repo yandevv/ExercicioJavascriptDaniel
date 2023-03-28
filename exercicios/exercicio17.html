@@ -5,9 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 11</title>
+    <title>Exercício 17</title>
 </head>
+
+<script type="text/javascript">
+    function calc(){
+        let raio =  parseFloat(document.getElementById("num1").value);
+
+        document.getElementById("resultadoOp1").innerHTML = 'O valor do comprimento da esfera: ' + (2 * Math.PI * raio).toFixed(2) + ' u';
+        document.getElementById("resultadoOp2").innerHTML = 'O valor da área da esfera: ' + (Math.PI * (raio**2)).toFixed(2) + ' u²';
+        document.getElementById("resultadoOp3").innerHTML = 'O valor do volume da esfera: ' + (1/4 * Math.PI * (raio**3)).toFixed(2) + ' u³';
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 17</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Digite o raio da esfera:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp1"></h3>
+      <h3 id="resultadoOp2"></h3>
+      <h3 id="resultadoOp3"></h3>
+    </div>
 </body>
 </html>

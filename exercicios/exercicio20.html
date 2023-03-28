@@ -5,9 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 11</title>
+    <title>Exercício 20</title>
 </head>
-<body>
+
+<script type="text/javascript">
+    function calc() {
+        let valorAngulo = parseFloat(document.getElementById("num1").value) * Math.PI / 180;
+        let distParede = parseFloat(document.getElementById("num2").value);      
     
+        document.getElementById("resultadoOp").innerHTML = 'A medida da escada é de: ' + (distParede / Math.cos(valorAngulo)).toFixed(2) + ' u.'
+    }
+</script>
+
+<body>
+    <h1>Exercício 20</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Valor do ângulo a:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Distância da escada até a parede:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
 </body>
 </html>
