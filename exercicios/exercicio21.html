@@ -7,16 +7,33 @@
     <link rel="stylesheet" href="../index.css">
     <title>Exercício 21</title>
 </head>
+
+<script type="text/javascript">
+  function calc() {
+    let qtdeHorasEx = parseFloat(document.getElementById("num3").value);
+    let qtdeHorasTrab = parseInt(document.getElementById("num1").value) - qtdeHorasEx;
+    let salarioMin = parseFloat(document.getElementById("num2").value);
+
+    console.log(qtdeHorasTrab);
+
+    document.getElementById("resultadoOp").innerHTML = 'O valor do salário deste funcionário é de: R$' + (qtdeHorasTrab * salarioMin / 8 + qtdeHorasEx * salarioMin / 4).toFixed(2);
+  }
+</script>
+
 <body>
     <h1>Exercício 21</h1>
     <div id="containerExercise">
       <div id="input">
-        <h2>Número 1:</h2>
+        <h2>Quant. de horas trabalhadas:</h2>
         <input type="number" id="num1" />
       </div>
       <div id="input">
-        <h2>Número 2:</h2>
+        <h2>Valor do salário mínimo:</h2>
         <input type="number" id="num2" />
+      </div>
+      <div id="input">
+        <h2>Quant. de horas extras trabalhadas:</h2>
+        <input type="number" id="num3" />
       </div>
       <button onclick="calc()">Calcular</button>
       <h3 id="resultadoOp"></h3>

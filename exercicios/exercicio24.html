@@ -5,9 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 11</title>
+    <title>Exercício 24</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let valorReais = parseFloat(document.getElementById("num1").value);
+
+        document.getElementById("resultadoOp1").innerHTML = 'Valor da conversão para dólar: US$ ' + (valorReais / 1.8).toFixed(2);
+        document.getElementById("resultadoOp2").innerHTML = 'Valor da conversão para marco alemão: DM ' + (valorReais / 2).toFixed(2);
+        document.getElementById("resultadoOp3").innerHTML = 'Valor da conversão para libra esterlina: £ ' + (valorReais / 3.57).toFixed(2);
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 24</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Quantidade de dinheiro em reais: </h2>
+        <input type="number" id="num1" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp1"></h3>
+      <h3 id="resultadoOp2"></h3>
+      <h3 id="resultadoOp3"></h3>
+    </div>
 </body>
 </html>

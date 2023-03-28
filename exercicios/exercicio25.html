@@ -5,9 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 11</title>
+    <title>Exercício 25</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let horas = parseInt(document.getElementById("num1").value);
+        let min = parseInt(document.getElementById("num2").value);
+
+        document.getElementById("resultadoOp1").innerHTML = 'As horas convertidas em minutos: ' + horas * 60 + ' minutos.';
+        document.getElementById("resultadoOp2").innerHTML = 'A quantidade total de minutos é de: ' + (horas * 60 + min) + ' minutos.';
+        document.getElementById("resultadoOp3").innerHTML = 'A quantidade total de segundos é de: ' + (horas * 60 + min) * 60 + ' segundos.';
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 25</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Digite as horas: </h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Digite os minutos:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp1"></h3>
+      <h3 id="resultadoOp2"></h3>
+      <h3 id="resultadoOp3"></h3>
+    </div>
 </body>
 </html>

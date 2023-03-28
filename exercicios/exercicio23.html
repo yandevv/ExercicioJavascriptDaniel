@@ -5,9 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
-    <title>Exercício 11</title>
+    <title>Exercício 23</title>
 </head>
+
+<script type="text/javascript">
+    function calc() {
+        let ang1 = parseFloat(document.getElementById("num1").value);
+        let ang2 = parseFloat(document.getElementById("num2").value);
+
+        document.getElementById("resultadoOp").innerHTML = 'O valor do terceiro ângulo é de: ' + (180 - (ang1 + ang2)) + '°';
+    }
+</script>
+
 <body>
-    
+    <h1>Exercício 23</h1>
+    <div id="containerExercise">
+      <div id="input">
+        <h2>Digite o valor do primeiro ângulo:</h2>
+        <input type="number" id="num1" />
+      </div>
+      <div id="input">
+        <h2>Digite o valor do segundo ângulo:</h2>
+        <input type="number" id="num2" />
+      </div>
+      <button onclick="calc()">Calcular</button>
+      <h3 id="resultadoOp"></h3>
+    </div>
 </body>
 </html>
