@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calcPontos.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Calculadora de Pontos</title>
+</head>
+
+<script type="text/javascript">
+    function enableInput(inputPlace) {
+        console.log("Liguei")
+
+        switch(inputPlace) {
+            case 0:
+                document.getElementById("padrao").disabled = !document.getElementById("padrao").disabled
+                break;
+            case 1:
+                document.getElementById("kits").disabled = !document.getElementById("kits").disabled
+                break;
+            case 2:
+                document.getElementById("suplementos").disabled = !document.getElementById("suplementos").disabled
+                break;
+            case 3:
+                document.getElementById("arroz").disabled = !document.getElementById("arroz").disabled
+                break;
+            default:
+                break;
+        }
+    }
+</script>
+
+<body>
+    <h1>Calculadora de Pontos</h1>
+    <div id="container">
+        <div id="inputContainer">
+            <input type="checkbox" onclick="enableInput(0)" id="cb">
+            <input type="number" id="padrao" class="inputBox" placeholder="Conjuntos Padrão" disabled="true">
+        </div>
+        <div id="inputContainer">
+            <input type="checkbox" onclick="enableInput(1)" id="cb">
+            <input type="number" id="kits" class="inputBox" placeholder="Kits Alimentação" disabled="true">
+        </div>
+        <div id="inputContainer">
+            <input type="checkbox" onclick="enableInput(2)" id="cb">
+            <input type="number" id="suplementos" class="inputBox" placeholder="Suplementos" disabled="true">
+        </div>
+        <div id="inputContainer">
+            <input type="checkbox" onclick="enableInput(3)" id="cb">
+            <input type="number" id="arroz" class="inputBox" placeholder="Arroz" disabled="true">
+        </div>
+        <button onclick="calc()" id="buttonCalc">Calcular</button>
+        <h2 id="resultadoCalc"></h2>
+    </div>
+</body>
+</html>
