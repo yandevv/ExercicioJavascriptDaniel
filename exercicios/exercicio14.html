@@ -13,13 +13,14 @@
         let dataAniver = new Date(document.getElementById("num1").value);
         let dataAtual = Date.now();
         let miliSec = dataAtual - dataAniver;
+        let days = miliSec / 1000 / 60 / 60 / 24;
 
         console.log(new Date(miliSec));
         
-        document.getElementById("resultadoOp1").innerHTML = 'Idade desta pessoa em anos: ' + (miliSec/1000/60/60/24/365).toFixed(2) + ' anos.';
-        document.getElementById("resultadoOp2").innerHTML = 'Idade desta pessoa em meses: ' + (((((miliSec/1000)/60)/60)/24)/30).toFixed(2) + ' meses.';
-        document.getElementById("resultadoOp3").innerHTML = 'Idade desta pessoa em dias: ' + ((((miliSec/1000)/60)/60)/24).toFixed(2) + ' dias.';
-        document.getElementById("resultadoOp4").innerHTML = 'Idade desta pessoa em semanas: ' + (((((miliSec/1000)/60)/60)/24)/7).toFixed(2) + ' semanas.';
+        document.getElementById("resultadoOp1").innerHTML = 'Idade desta pessoa em anos: ' + (days/365).toFixed(2) + ' anos.';
+        document.getElementById("resultadoOp2").innerHTML = 'Idade desta pessoa em meses: ' + (days/365*12).toFixed(2) + ' meses.';
+        document.getElementById("resultadoOp3").innerHTML = 'Idade desta pessoa em dias: ' + (days).toFixed(2) + ' dias.';
+        document.getElementById("resultadoOp4").innerHTML = 'Idade desta pessoa em semanas: ' + (days/7).toFixed(2) + ' semanas.';
     }
 </script>
 
