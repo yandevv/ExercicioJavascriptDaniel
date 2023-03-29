@@ -40,6 +40,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color: #253969;
   border-radius: 8px;  
   height: 40px;
