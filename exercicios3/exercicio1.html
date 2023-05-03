@@ -10,7 +10,7 @@
 
 <script>
 function calc() {
-    let valor1, valor2, valor3, valor4, valor5
+    let valor1 = [], valor2 = [], valor3 = [], valor4 = [], valor5 = []
 
     for(let i = 0; i < 4; i++) {
         valor1[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 1)`));
@@ -27,6 +27,24 @@ function calc() {
     for(let i = 0; i < 4; i++) {
         valor5[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 5)`));
     }
+
+    document.getElementById("valor1").innerHTML = `Valores do grupo 1: ${valor1}\n`
+    document.getElementById("valor2").innerHTML = `Valores do grupo 2: ${valor2}\n`
+    document.getElementById("valor3").innerHTML = `Valores do grupo 3: ${valor3}\n`
+    document.getElementById("valor4").innerHTML = `Valores do grupo 4: ${valor4}\n`
+    document.getElementById("valor5").innerHTML = `Valores do grupo 5: ${valor5}\n`
+
+    valor1.sort((a, b) => a - b)
+    valor2.sort((a, b) => a - b)
+    valor3.sort((a, b) => a - b)
+    valor4.sort((a, b) => a - b)
+    valor5.sort((a, b) => a - b)
+
+    document.getElementById("valor1c").innerHTML = `Valores do grupo 1 (crescente): ${valor1}\n`
+    document.getElementById("valor2c").innerHTML = `Valores do grupo 2 (crescente): ${valor2}\n`
+    document.getElementById("valor3c").innerHTML = `Valores do grupo 3 (crescente): ${valor3}\n`
+    document.getElementById("valor4c").innerHTML = `Valores do grupo 4 (crescente): ${valor4}\n`
+    document.getElementById("valor5c").innerHTML = `Valores do grupo 5 (crescente): ${valor5}\n`
 }
 </script>
 
@@ -34,7 +52,22 @@ function calc() {
     <h1>Exercício 1</h1>
     <div id='containerExercise'>
       <button onclick='calc()'>Calcular</button>
-      <h3 id='resultadoOp'></h3>
+      <div style="display: flex; gap: 20px">
+        <div>
+            <p id="valor1"></p>
+            <p id="valor2"></p>
+            <p id="valor3"></p>
+            <p id="valor4"></p>
+            <p id="valor5"></p>
+        </div>
+        <div>
+            <p id="valor1c"></p>
+            <p id="valor2c"></p>
+            <p id="valor3c"></p>
+            <p id="valor4c"></p>
+            <p id="valor5c"></p>
+        </div>
+      </div>
     </div>
 </body>
 </html>
