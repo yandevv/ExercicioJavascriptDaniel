@@ -120,3 +120,21 @@ margin: 0;
   padding: 5px 0 5px 0;
   margin: 5px 0 5px 0;
 }
+
+#buttonIndex2 {
+  font-size: 14pt;
+  font-weight: 600;
+  font-family: monaco, Consolas, Lucida Console, monospace; 
+  filter: drop-shadow(0 0 0.5rem #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;  
+  height: 40px;
+  width: 150px;
+  margin: 10px auto 10px auto;
+  cursor: pointer;
+  border: none;
+}

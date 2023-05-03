@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 1</title>
+</head>
+
+<script>
+function calc() {
+    let valor1, valor2, valor3, valor4, valor5
+
+    for(let i = 0; i < 4; i++) {
+        valor1[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 1)`));
+    }
+    for(let i = 0; i < 4; i++) {
+        valor2[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 2)`));
+    }
+    for(let i = 0; i < 4; i++) {
+        valor3[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 3)`));
+    }
+    for(let i = 0; i < 4; i++) {
+        valor4[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 4)`));
+    }
+    for(let i = 0; i < 4; i++) {
+        valor5[i] = Number(prompt(`Digite o ${i+1}º número: (Grupo 5)`));
+    }
+}
+</script>
+
+<body>
+    <h1>Exercício 1</h1>
+    <div id='containerExercise'>
+      <button onclick='calc()'>Calcular</button>
+      <h3 id='resultadoOp'></h3>
+    </div>
+</body>
+</html>
