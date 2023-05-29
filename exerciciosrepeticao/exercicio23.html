@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 23</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+      let op = 0
+
+      do{
+        op = Number(prompt('Digite a operação desejada: \n1. Novo salário\n2. Férias\n3. Décimo terceiro\n4. Sair'));        
+
+        if(op < 1 && op > 4) {
+            do{
+              alert('Operação inválida!');
+              op = Number(prompt('Digite a operação desejada: \n1. Novo salário\n2. Férias\n3. Décimo terceiro\n4. Sair'));
+            }while(op < 1 && op > 4)
+        }
+
+        let salario = 0, novoSalario = 0
+
+        switch(op) {
+          case 1: //Novo salário
+            salario = Number(prompt('Digite o valor do seu salário: '));
+
+            if(salario > 600) {
+              novoSalario = salario * 1.05;
+            } else if(salario >= 210) {
+              novoSalario = salario * 1.1;
+            } else {
+              novoSalario = salario * 1.15;
+            }
+
+            alert(`Novo salário: R$${novoSalario.toFixed(2)}`);
+            break;
+          case 2: //Férias
+            salario = Number(prompt('Digite o valor do seu salário: '));
+
+            novoSalario = salario + (salario * 1/3);
+
+            alert(`Férias: R$${novoSalario.toFixed(2)}`);
+            break;
+          case 3: // Décimo terceiro
+            salario = Number(prompt('Digite o valor do seu salário: '));
+
+            let qtdeMesesTrab = Number(prompt('Digite a quantidade de meses de trabalho na empresa: '));
+
+            if(qtdeMesesTrab < 0 && qtdeMesesTrab > 12) {
+                do{
+                  alert('Valor de quantidade de meses trabalhados inválido! (mín 1 mês / máx 12 meses)');
+                  qtdeMesesTrab = Number(prompt('Digite a quantidade de meses de trabalho na empresa: '));
+                }while(qtdeMesesTrab < 0 && qtdeMesesTrab > 12);
+            }
+
+            novoSalario = salario * qtdeMesesTrab / 12
+
+            alert(`Décimo terceiro: R$${novoSalario.toFixed(2)}`);
+            break;          
+        }
+      }while(op !== 4)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 23</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

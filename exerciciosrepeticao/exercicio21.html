@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 21</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+      let cod = 0, qtdeCand1 = 0, qtdeCand2 = 0, qtdeCand3 = 0, qtdeCand4 = 0, qtdeNulo = 0, qtdeBranco = 0, qtdeVotos = 0
+
+      do{
+        cod = Number(prompt("Digite seu voto: \n(1, 2, 3 e 4 para os candidatos / 5 Voto Nulo / 6 Voto em Branco)\n(0 - Para Sair)"))
+
+        if(cod < 0 && cod > 6) {
+            do{
+              alert('Valor de voto inválido!');
+              cod = Number(prompt("Digite seu voto: \n(1, 2, 3 e 4 para os candidatos / 5 Voto Nulo / 6 Voto em Branco)"));
+            }while(cod < 0 && cod > 6)
+        }
+
+        switch(cod) {
+            case 1:
+                qtdeCand1++;
+                qtdeVotos++;
+                break;
+            case 2:
+                qtdeCand2++;
+                qtdeVotos++;
+                break;
+            case 3:
+                qtdeCand3++;
+                qtdeVotos++;
+                break;
+            case 4:
+                qtdeCand4++;
+                qtdeVotos++;
+                break;
+            case 5:
+                qtdeNulo++;
+                qtdeVotos++;
+                break;
+            case 6:
+                qtdeBranco++;
+                qtdeVotos++;
+                break;
+        }
+      } while(cod !== 0)
+
+      alert(`Candidato 1: ${qtdeCand1} voto(s)\nCandidato 2: ${qtdeCand2} voto(s)\nCandidato 3: ${qtdeCand3} voto(s)\nCandidato 4: ${qtdeCand4} voto(s)\nVotos Nulos: ${qtdeNulo} voto(s)\n Votos Brancos: ${qtdeBranco} voto(s)`)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 21</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>
