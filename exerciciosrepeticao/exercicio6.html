@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 6</title>
+  </head>
+
+  <script>
+    function calc() {
+      let codigo;
+      let valor;
+      let totalVista = 0;
+      let conta = 1;
+      let totalPrazo = 0;
+      while (conta <= 15) {
+        codigo = prompt("Informe P ou V").toUpperCase();
+        valor = Number(prompt("Informe valor"));
+        if (codigo == "P") {
+          totalPrazo += valor;
+        } else if (codigo == "V") {
+          totalVista += valor;
+        } else {
+          alert("Código inválido, valor não será considerado");
+          //conta--
+          continue; // continua na próxima iteração
+        }
+        conta++;
+      }
+      let total = totalVista + totalPrazo;
+      let valorParcela = totalPrazo / 3;
+      document.getElementById(
+        "result6"
+      ).innerHTML = `Total à vista ${totalVista} Total à prazo ${totalPrazo} Total ${total} Primeira parcela ${valorParcela.toFixed(
+        2
+      )}`;
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 6</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

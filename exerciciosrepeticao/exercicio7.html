@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 7</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+      let idadeSuperior = 0, alturasPorIdade, peso40KgCont = 0, alturas = 0; alturasCont = 0
+
+      for (let i = 0; i < 5; i++) {
+        let idade = Number(prompt(`Digite o idade da ${i+1}ª pessoa: `));
+        let altura = Number(prompt(`Digite o altura da ${i+1}ª pessoa: `));
+        let peso = Number(prompt(`Digite o peso da ${i+1}ª pessoa: `));
+
+        if(idade > 50) {
+            idadeSuperior++;
+        }
+
+        if(idade >= 10 && idade <= 20) {
+            alturas += altura;
+            alturasCont++;
+        }
+
+        if(peso < 40) {
+            peso40KgCont++;
+        }
+      }
+
+      let mediaAltura = alturas / alturasCont;
+      let porcent40Kg = peso40KgCont / 5 * 100
+
+      alert(`Pessoas com idade superior à 50 anos: ${idadeSuperior}\nMedia das alturas de pessoas entre 10 a 20 anos: ${mediaAltura}\nPorcentagem de pessoas com peso inferior a 40kg: ${porcent40Kg.toFixed(2)}%`)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 7</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

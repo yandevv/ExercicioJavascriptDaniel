@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 9</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+      let idades = 0, quantPessoas90kg = 0, quant2 = 0
+      
+      for(let i = 0; i < 10; i++) {
+        let idade = Number(prompt(`Digite a idade da ${i+1}ª pessoa: `));
+        let peso = Number(prompt(`Digite o peso da ${i+1}ª pessoa: (em kg)`));
+        let altura = Number(prompt(`Digite a altura da ${i+1}ª pessoa: (em cm)`));
+
+        idades += idade;
+
+        if(peso > 90 && altura < 150) {
+            quantPessoas90kg++;
+        }
+
+        if(idade >= 10 && idade <= 30 && altura > 190) {
+            quant2++;
+        }
+      }
+
+      let mediaIdades = idades / 10
+
+      alert(`Média das idades: ${mediaIdades}\nQuantidade de pessoas com peso superior à 90kg e altura inferior à 1,50 m: ${quantPessoas90kg}\nPorcentagem de pessoas entre 10 a 30 anos que medem mais de 1,90m: ${quant2}`)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 9</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

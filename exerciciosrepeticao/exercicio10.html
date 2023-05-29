@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 10</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+      let somaPares = 0, somaPrimos = 0;
+
+      for(let i = 0; i < 10; i++) {
+        let num = Number(prompt(`Digite o ${i+1} número: `));
+
+        if(num % 2 == 0) {
+          somaPares += num;
+        } else {
+            let cont = 2, contDiv = 0;
+
+            while(cont < num && contDiv == 0) {
+              if(num % cont == 0) {
+                contDiv++;
+              }
+
+              cont++
+            }
+
+            if(contDiv == 0) {
+                somaPrimos += num;
+            }
+        }
+
+        if(num == 2) {
+          somaPrimos += num;
+        }
+      }
+
+      alert(`Soma dos números pares: ${somaPares}\nSoma dos números primos: ${somaPrimos}`)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 10</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

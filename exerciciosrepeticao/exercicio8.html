@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 8</title>
+  </head>
+
+  <script>
+    function calc() {
+      let quantIdade50Peso60 = 0, idades = 0, contIdade = 0, quantOlhoAzul = 0, quantRuivaSemOlhoAzul = 0;
+
+      for(let i = 0; i < 6; i++) {
+        let idade = Number(prompt(`Digite a idade da ${i+1}ª pessoa:`));
+        let peso = Number(prompt(`Digite o peso da ${i+1}ª pessoa: (em kg)`));
+        let altura = Number(prompt(`Digite a altura da ${i+1}ª pessoa: (em cm)`));
+        let corOlho = prompt(`Digite a cor do olho da ${i+1}ª pessoa: \n(A - Azul / P - Preto / V - Verde / C - Castanho)`);
+        let corCabelo = prompt(`Digite a cor do cabelo da ${i+1}ª pessoa: \n(P - Preto / C - Castanho / L - Loiro / R- Ruivo)`);
+
+        if(idade > 50 && peso < 60) {
+            quantIdade50Peso60++
+        }
+
+        if(altura < 150) {
+            idades += 0;
+            contIdade++;
+        }
+
+        if(corOlho == "A") {
+            quantOlhoAzul++;
+        }
+
+        if(corCabelo == "R" && corOlho != "A") {
+            quantRuivaSemOlhoAzul++;
+        }
+      }
+
+      let porcentOlhoAzul = quantOlhoAzul / 6
+      let mediaIdade = idades / contIdade;
+
+      alert(`Quant. de pessoas com idade superior à 50 anos e peso inferior a 60kg: ${quantIdade50Peso60}\nMédia das idades de pessoas com altura inferior à 1,50m: ${mediaIdade}\nPorcentagem de pessoas com olhos azuis: ${porcentOlhoAzul.toFixed(2)}%\nQuant. de pessoas ruivas sem olhos azuis: ${quantRuivaSemOlhoAzul}`)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 8</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

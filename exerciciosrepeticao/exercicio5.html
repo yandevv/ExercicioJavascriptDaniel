@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 5</title>
+  </head>
+
+  <script>
+    function calc() {
+      let conta1 = 1;
+      while (conta1 <= 10) {
+        let conta2 = 0;
+        let saida = "";
+        while (conta2 <= 10) {
+          saida = saida + `\n ${conta1} x ${conta2} = ${conta1 * conta2}`;
+          conta2++;
+        }
+        alert(saida);
+        conta1++;
+      }
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 5</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

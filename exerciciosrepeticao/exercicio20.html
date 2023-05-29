@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 20</title>
+  </head>
+
+  <script type="text/javascript">
+    function calc() {
+        let op;
+
+        do{
+          let op = Number(prompt(`Digite a operação desejada: \n(1- Média aritmética/2- Média ponderada/3- Sair)`))
+
+          if(op === 1) {
+            let nota1 = Number(prompt('Digite o valor da primeira nota: '))
+            let nota2 = Number(prompt('Digite o valor da segunda nota: '))
+
+            let mediaArit = (nota1 + nota2) / 2
+
+            alert('O valor da média é de: ' + mediaArit);
+          } else if(op === 2) {
+            let nota1 = Number(prompt('Digite a nota 1: '))
+            let peso1 = Number(prompt('Digite o peso 1: '))
+            let nota2 = Number(prompt('Digite a nota 2: '))
+            let peso2 = Number(prompt('Digite o peso 2: '))
+            let nota3 = Number(prompt('Digite a nota 3: '))
+            let peso3 = Number(prompt('Digite o peso 3: '))
+
+            let mediaPond = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1+peso2+peso3)
+
+            alert('O valor da média ponderada é de: ' + mediaPond)
+          } else if(op === 3) {
+            break;
+          }
+        } while(op !== 3);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 20</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>
