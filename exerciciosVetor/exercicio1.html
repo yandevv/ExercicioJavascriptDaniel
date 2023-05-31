@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 1</title>
+  </head>
+
+  <script>
+    function calc() {
+      let nums = [], qtdePar = 0, qtdeImpar = 0;
+
+      for(let i = 0; i < 6; i++) {
+        nums[i] = Number(prompt(`Digite o ${i+1}º número: `));
+
+        nums[i] % 2 === 0 ? qtdePar++ : qtdeImpar++;
+      }
+
+      let numPares = nums.filter((num) => num % 2 === 0);
+      let numImpares = nums.filter((num) => num % 2 !== 0);
+
+      alert(`Números pares: ${numPares}\nQtde. de números pares: ${qtdePar}\nNúmeros ímpares: ${numImpares}\nQtde. de números ímpares: ${qtdeImpar}`);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 1</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <div style="display: flex; gap: 20px">
+        <div id="tabela"></div>
+      </div>
+    </div>
+  </body>
+</html>
