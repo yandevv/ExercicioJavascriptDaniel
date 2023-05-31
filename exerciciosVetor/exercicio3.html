@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 3</title>
+  </head>
+
+  <script>
+    function calc() {
+      let codProdutos = [], qtdeProdutos = [];
+
+      for(let i = 0; i < 3; i++) {
+        codProdutos[i] = prompt(`Digite o código do ${i+1}º produto: `);
+        qtdeProdutos[i] = Number(prompt(`Digite a quantidade de estoque do ${i+1}º produto: `));
+      } 
+      
+      let codCliente = 0;
+
+      do{
+        codCliente = prompt('Digite o código do cliente: \n(digite o valor 0 caso queria finalizar o programa)');
+
+        if(codCliente != 0) {
+            codProduto = prompt('Digite o código do produto em que deseja ser comprado: ');
+            qtdeProduto = Number(prompt('Digite a quantidade de produto em que deseja ser comprado: '));
+
+            const indexProduto = codProdutos.findIndex((codProdutoProdutos) => codProdutoProdutos === codProduto);
+
+            if(indexProduto !== -1) {
+                if(qtdeProdutos[indexProduto] >= qtdeProduto) {
+                    qtdeProdutos[indexProduto] -= qtdeProduto;
+                    alert('Pedido atendido! Obrigado e volte sempre.');
+                } else {
+                    alert('Não temos estoque suficiente dessa mercadoria.');
+                }
+            }else {
+                alert('Código de produto inválido!');
+            }
+        }
+      } while(codCliente != 0);
+
+      let mensagem = '';
+      
+      codProdutos.forEach((codProduto, i) => {
+          mensagem += `Código do Produto: ${codProduto} | Qtde de Produto: ${qtdeProdutos[i]}\n`;
+          return mensagem;
+        })
+        
+      alert(mensagem);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 3</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

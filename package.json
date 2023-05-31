@@ -1,7 +1,4 @@
 {
-	"dependencies": {
-		"eslint": "^8.36.0"
-	},
 	"devDependencies": {
 		"cz-conventional-changelog": "^3.3.0"
 	},

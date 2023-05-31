@@ -13,7 +13,7 @@
       let nums = [], qtdePar = 0, qtdeImpar = 0;
 
       for(let i = 0; i < 6; i++) {
-        nums[i] = Number(prompt(`Digite o ${i+1}º número: `));
+        nums[i] = Math.floor(Number(prompt(`Digite o ${i+1}º número: `)));
 
         nums[i] % 2 === 0 ? qtdePar++ : qtdeImpar++;
       }
@@ -21,7 +21,7 @@
       let numPares = nums.filter((num) => num % 2 === 0);
       let numImpares = nums.filter((num) => num % 2 !== 0);
 
-      alert(`Números pares: ${numPares}\nQtde. de números pares: ${qtdePar}\nNúmeros ímpares: ${numImpares}\nQtde. de números ímpares: ${qtdeImpar}`);
+      alert(`Números pares: ${numPares.length === 0 ? 'Nenhum número par 😕' : numPares}\nQtde. de números pares: ${qtdePar}\nNúmeros ímpares: ${numImpares.length === 0 ? 'Nenhum número ímpar 😕' : numImpares}\nQtde. de números ímpares: ${qtdeImpar}`);
     }
   </script>
 

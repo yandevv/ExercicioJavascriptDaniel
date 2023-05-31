@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 2</title>
+  </head>
+
+  <script>
+    function calc() {
+      let num = []
+
+      for(let i = 0; i < 7; i++) {
+        num[i] = Math.floor(Number(prompt(`Digite o ${i+1}º número: `)));
+      }
+
+      let numMult2 = num.filter((num) => num % 2 === 0);
+      let numMult3 = num.filter((num) => num % 3 === 0);
+      let numMult2e3 = num.filter((num) => num % 2 === 0 && num % 3 === 0);
+
+      alert(`Números múltiplos por 2: ${numMult2}\nNúmeros múltiplos por 3: ${numMult3}\nNúmeros múltiplos por 2 e 3: ${numMult2e3}`);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 2</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <div style="display: flex; gap: 20px">
+        <div id="tabela"></div>
+      </div>
+    </div>
+  </body>
+</html>
