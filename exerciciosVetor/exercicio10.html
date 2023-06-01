@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 10</title>
+  </head>
+
+  <script>
+    function calc() {        
+      let array1 = [], array2 = [], sumArray2 = 0, resultArray1 = [], resultArray2 = [];
+
+      for(let i = 0; i < 10; i++) {
+        array1[i] = Number(prompt(`Digite o ${i+1}º número do primeiro vetor: `));
+      }
+      for(let i = 0; i < 5; i++) {
+        array2[i] = Number(prompt(`Digite o ${i+1}º número do segundo vetor: `));
+        sumArray2 += array2[i];
+      }
+
+      for(let i in array1) {
+        if(array1[i] % 2 === 0) {
+            resultArray1.push(array1[i] + sumArray2);
+        } else {
+            let contDiv = 0
+            for(let j in array2) {
+                if(array1[i] % array2[j]) {
+                    contDiv++;
+                }
+            }
+            resultArray2.push(contDiv);
+        }
+      }
+
+      alert(`Primeiro vetor resultante: ${resultArray1}\nSegundo vetor resultante: ${resultArray2}`);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 10</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <p id="resultadoOp"></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 5</title>
+  </head>
+
+  <script>
+    function calc() {        
+      let matriculasLogica = [], matriculasLP = [], matriculasIguais = []
+
+      for(let i = 0; i < 15; i++) {
+        matriculasLogica[i] = prompt(`Digite o código de matrícula do ${i+1}º aluno de Lógica: `);
+      }
+
+      for(let i = 0; i < 10; i++) {
+        matriculasLP[i] = prompt(`Digite o código de matrícula do ${i+1}º aluno de LP: `);
+      }
+
+      for(let i in matriculasLogica) {
+        for(let j in matriculasLP) {
+            if(matriculasLogica[i] === matriculasLP[j]) {
+                matriculasIguais.push(matriculasLogica[i])
+            }
+        }
+      }
+
+      alert(`Alunos que estão matriculados no mesmo curso: ${matriculasIguais}`)
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 5</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+    </div>
+  </body>
+</html>

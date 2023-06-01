@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 6</title>
+  </head>
+
+  <script>
+    function calc() {        
+      let totalVendasVendedor = [], percentComissVendedor = [], nomesVendedor = [], totalVendas = 0, maiorValor = {index: undefined, valor: undefined}, menorValor = {index: undefined, valor: undefined}, msg = '<strong>Relatório dos nomes e seus valores a receber: </strong><br /><br />', aReceberVendedor = [];
+
+      for(let i = 0; i < 10; i++) {
+        nomesVendedor[i] = prompt(`Digite o nome do ${i+1}º vendedor: `);
+        totalVendasVendedor[i] = Number(prompt(`Digite o total de vendas do ${i+1}º vendedor: `));
+        percentComissVendedor[i] = Number(prompt(`Digite o percentual do vendedor do ${i+1}º vendedor: `));
+        aReceberVendedor[i] = totalVendasVendedor[i] * percentComissVendedor[i] / 100;
+
+        if(aReceberVendedor[i] > maiorValor.valor || maiorValor.valor === undefined) {
+          maiorValor.index = i;
+          maiorValor.valor = aReceberVendedor[i];
+        }
+
+        if(aReceberVendedor[i] < menorValor.valor || menorValor.valor === undefined) {
+          menorValor.index = i;
+          menorValor.valor = aReceberVendedor[i];
+        }
+
+        totalVendas += totalVendasVendedor[i];
+      }
+
+      aReceberVendedor.forEach((valor, index) => {
+        msg += `<strong>${nomesVendedor[index]}:</strong> R$${aReceberVendedor[index].toFixed(2)}<br />`
+      })
+
+      msg += `<br /><strong>Total de vendas de todos os vendedores: </strong>R$${totalVendas.toFixed(2)}`
+      msg += `<br /><strong>Maior vendedor: </strong>${nomesVendedor[maiorValor.index]} - R$${maiorValor.valor.toFixed(2)}`
+      msg += `<br /><strong>Menor vendedor: </strong>${nomesVendedor[menorValor.index]} - R$${menorValor.valor.toFixed(2)}`
+
+      document.getElementById("resultadoOp").innerHTML = msg
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 6</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <p id="resultadoOp"></p>
+    </div>
+  </body>
+</html>
