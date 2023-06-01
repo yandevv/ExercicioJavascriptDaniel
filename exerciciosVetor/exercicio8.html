@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício 8</title>
+  </head>
+
+  <script>
+    function calc() {        
+      let nomes = [], medias = [], maiorMedia = -1;
+
+      for(let i = 0; i < 7; i++) {
+        nomes[i] = prompt(`Digite o nome do ${i+1}º aluno: `);
+        medias[i] = Number(prompt(`Digite a média do ${i+1}º aluno: `));
+
+        if(medias[maiorMedia] < medias[i] || maiorMedia === -1) {
+            maiorMedia = i;
+        }
+      }
+
+      alert(`Nome do aluno com a maior média: ${nomes[maiorMedia]} - ${medias[maiorMedia]}`);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício 8</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <!-- <p id="resultadoOp"></p> -->
+    </div>
+  </body>
+</html>
