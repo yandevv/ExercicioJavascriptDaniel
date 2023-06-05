@@ -10,7 +10,7 @@
 
   <script>
     function calc() {        
-      let matriculasLogica = [], matriculasLP = [], matriculasIguais = []
+      let matriculasLogica = [], matriculasLP = [], matriculasIguais = [];
 
       for(let i = 0; i < 15; i++) {
         matriculasLogica[i] = prompt(`Digite o código de matrícula do ${i+1}º aluno de Lógica: `);
@@ -21,14 +21,12 @@
       }
 
       for(let i in matriculasLogica) {
-        for(let j in matriculasLP) {
-            if(matriculasLogica[i] === matriculasLP[j]) {
-                matriculasIguais.push(matriculasLogica[i])
-            }
+        if(matriculasLP.includes(matriculasLogica[i])) {
+          matriculasIguais.push(matriculasLogica[i]);
         }
       }
 
-      alert(`Alunos que estão matriculados no mesmo curso: ${matriculasIguais}`)
+      alert(`Alunos que estão matriculados no mesmo curso: ${matriculasIguais}`);
     }
   </script>
 
