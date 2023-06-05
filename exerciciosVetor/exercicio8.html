@@ -10,18 +10,22 @@
 
   <script>
     function calc() {        
-      let nomes = [], medias = [], maiorMedia = -1;
+      let nomes = [], medias = [], maiorMedia = -1, msg = "Alunos reprovados e suas notas no exame final necessárias para aprovação:\n";
 
       for(let i = 0; i < 7; i++) {
         nomes[i] = prompt(`Digite o nome do ${i+1}º aluno: `);
         medias[i] = Number(prompt(`Digite a média do ${i+1}º aluno: `));
+
+        if(medias[i] < 7) {
+          msg += `Nome: ${nomes[i]} - Nota necessária no Exame Final: ${10 - medias[i]}\n`
+        }
 
         if(medias[maiorMedia] < medias[i] || maiorMedia === -1) {
             maiorMedia = i;
         }
       }
 
-      alert(`Nome do aluno com a maior média: ${nomes[maiorMedia]} - ${medias[maiorMedia]}`);
+      alert(`Nome do aluno com a maior média: ${nomes[maiorMedia]} - ${medias[maiorMedia]}\n${msg}`);
     }
   </script>
 
