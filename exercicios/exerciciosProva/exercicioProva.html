@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício Prova</title>
+  </head>
+
+  <script>
+    function calc() {
+      let tituloPost = [], descricaoPost = [], userPost = [], qtdeLikesPost = [];
+
+      for(let i = 0; i < 2; i++) {
+        tituloPost[i] = prompt(`Digite o título da ${i+1}ª postagem: `);
+        descricaoPost[i] = prompt(`Digite a descrição da ${i+1}ª postagem: `);
+        user = prompt(`Digite o nome de usuário da ${i+1}ª postagem: `);
+
+        while(userPost.includes(user)) {
+            alert(`Esse nome de usuário já está sendo usado!`);
+            user = prompt(`Digite outro nome de usuário válido para a ${i+1}ª postagem: `);
+        }
+
+        userPost[i] = user;
+
+        qtdeLikesPost[i] = Number(prompt(`Digite a quantidade de likes da ${i+1}ª postagem: `));
+
+        while(qtdeLikesPost[i] < 0) {
+            alert(`Esse número de likes é inválido!`);
+            qtdeLikesPost[i] = Number(prompt(`Digite uma quantidade de likes válida para a ${i+1}ª postagem: `));
+        }
+
+    }
+
+      alert("Você poderá fazer 5 mudanças da quantidade de likes nas suas postagens! Digite um usuário válido para que não perca sua mudança.");
+
+      for(let i = 0; i < 5; i++) {
+        let userChange = prompt(`Digite o ${i+1}º usuário a ser modificado: `)
+        let indexChange = userPost.indexOf(userChange);
+
+        if(indexChange !== -1) {
+            let op = Number(prompt(`Deseja aumentar ou diminuir a quantidade de likes? (1- Aumentar / 2- Diminuir)`));
+
+            if(op === 1) { //Aumentar
+                let increase = Number(prompt(`Digite a quantidade de likes que deseja ser aumentado: `));
+
+                qtdeLikesPost[indexChange] += increase;
+            } else if (op === 2) { //Diminuir
+                let decrease = Number(prompt(`Digite a quantidade de likes que deseja ser diminuído: `));
+
+                while((qtdeLikesPost[indexChange] - decrease) < 0) {
+                    decrease = Number(prompt("Quantidade de likes negativo! Digite outra quantidade de likes a ser diminuído."));
+                }
+
+                qtdeLikesPost[indexChange] -= decrease;
+            }
+        } else {
+            alert("Esse usuário não existe!")
+        }
+      }
+      
+      const crescLikesPost = qtdeLikesPost.sort();
+      
+      const indexMostLiked = qtdeLikesPost.indexOf(crescLikesPost[crescLikesPost.length - 1]);
+      const indexLessLiked = qtdeLikesPost.indexOf(crescLikesPost[0]);
+
+      alert(`Título do post com mais likes: ${tituloPost[indexMostLiked]}\n
+             Descrição do post com mais likes: ${descricaoPost[indexMostLiked]}\n
+             ==========================================
+             Título do post com menos likes: ${tituloPost[indexLessLiked]}\n
+             Descrição do post com menos likes: ${descricaoPost[indexLessLiked]}`);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício Prova</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Postar</button>
+      <div style="display: flex; gap: 20px">
+        <div id="tabela"></div>
+      </div>
+    </div>
+  </body>
+</html>
