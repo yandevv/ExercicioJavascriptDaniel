@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício Delta</title>
+  </head>
+
+  <script>
+    function calc() {
+      let deltaObj = {
+        a: 0,
+        b: 0,
+        c: 0,
+        result: 0
+      }
+
+      deltaObj.a = Number(prompt('Digite o valor de A: '));
+      deltaObj.b = Number(prompt('Digite o valor de B: '));
+      deltaObj.c = Number(prompt('Digite o valor de C: '));
+
+      deltaObj.result = deltaObj.b ** 2 - 4 * deltaObj.a * deltaObj.c;
+
+      alert(`O valor de delta é: ${deltaObj.result}`);
+
+      document.getElementById('resultadoOp').innerHTML = `O resultado do delta é de: ${deltaObj.result}`;
+    }
+  </script>
+
+  <body>
+    <h1>Exercício Delta</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <p id="resultadoOp"></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício Delta</title>
+  </head>
+
+  <script>
+    function calc() {
+      let sumMedia = 0;
+      let arrAlunos = [];
+
+      for(let i = 0; i < 10; i++) {
+        arrAlunos[i] = {
+          codigo: Number(prompt(`Digite o código do ${i+1}º aluno: `)),
+          nome: prompt(`Digite o nome do ${i+1}º aluno: `),
+          p1: Number(prompt(`Digite a nota da primeira prova do ${i+1}º aluno: `)),
+          p2: Number(prompt(`Digite a nota da segunda prova do ${i+1}º aluno: `)),
+          media: 0
+        }
+
+        arrAlunos[i].media = (arrAlunos[i].p1 + arrAlunos[i].p2) / 2;
+
+        alert(`A média do aluno é de ${arrAlunos[i].nome} é ${arrAlunos[i].media}`);
+
+        sumMedia += arrAlunos[i].media;
+      }
+
+      alert(`A média geral dos alunos é de: ${sumMedia / 10}`);
+    }
+  </script>
+
+  <body>
+    <h1>Exercício Delta</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <p id="resultadoOp"></p>
+    </div>
+  </body>
+</html>
