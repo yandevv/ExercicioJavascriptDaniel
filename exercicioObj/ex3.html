@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <title>Exercício Filmes</title>
+  </head>
+
+  <script>
+    // Faça um programa que utiliza objeto e vetor
+
+    //Primeiro: Solicite ao usuário para informar 4 filmes, contendo título, duração, classificação e avaliação.
+    //Segundo: Calcule e mostre a média da avaliação
+    //Terceiro: Calcule e mostre o título do filme com duração mais curto e longo
+
+    function calc() {
+        let filmes = [];
+
+        for(let i = 0; i < 4; i++) {
+            let obj = {};
+            obj.titulo = prompt(`Digite o título do ${i+1}º filme: `);
+            obj.duracao = Number(prompt(`Digite a duração do ${i+1}º filme: `));
+            obj.classificacao = Number(prompt(`Digite a classificação do ${i+1}º filme: `));
+            obj.avaliacao = Number(prompt(`Digite a avaliação do ${i+1}º filme: `));
+
+            filmes[i] = obj;
+        }
+
+        let mediaAval = 0;
+
+        for(let i in filmes) {
+            mediaAval = mediaAval + filmes[i].avaliacao;
+        }
+        mediaAval = mediaAval / 4;
+
+        filmes.sort(function(a, b){return a - b});
+
+        let tituloCurto = filmes[3].titulo;
+        let tituloLongo = filmes[0].titulo;
+
+        document.getElementById('resultadoOp').innerHTML = `Média de avaliações: ${mediaAval}<br />Título do filme mais curto: ${tituloCurto}<br />Título do filme mais longo: ${tituloLongo}`;
+    }
+  </script>
+    
+  <body>
+    <h1>Exercício Filmes</h1>
+    <div id="containerExercise">
+      <button onclick="calc()">Calcular</button>
+      <p id="resultadoOp"></p>
+    </div>
+  </body>
+</html>
