@@ -8,7 +8,7 @@
     <title>Exercício Votos Partidos</title>
   </head>
 
-  <script>
+  <script type="text/javascript">
     // Sistema de votação
 
     //Primeiro: Entrada de 10 candidatos (com código, partido, nome e qtdeVotos)
@@ -27,10 +27,10 @@
             console.log(candidate.name);
             candidate.id = Number(prompt(`Digite o número de código do ${i+1}º candidato:`));
             console.log(candidate.id);
-            candidate.party = prompt(`Digite o partido do ${i+1}º candidato: (PT / PL / PSDB / PDT)`);
+            candidate.party = prompt(`Digite o partido do ${i+1}º candidato: (PT | PL | PSDB | PDT)`);
             while(!partyOptions.includes(candidate.party.toUpperCase())) {
                 alert('Digite um nome de partido válido!');
-                candidate.party = prompt(`Digite o partido do ${i+1}º candidato: (PT / PL / PSDB / PDT)`);
+                candidate.party = prompt(`Digite o partido do ${i+1}º candidato: (PT | PL | PSDB | PDT)`);
             }
             candidate.votesQtt = Number(prompt(`Digite a quantidade de votos do ${i+1}º candidato:`));
 
@@ -40,10 +40,10 @@
         let sortedCandidates = candidates.sort((candidateA, candidateB) => candidateA.votesQtt - candidateB.votesQtt)[candidates.length - 1];
         result += `O candidato mais votado de todos os partidos foi o ${sortedCandidates.name} com ${sortedCandidates.votesQtt} no partido ${sortedCandidates.party}`;
 
-        let chosenParty = prompt('Digite um partido válido para a busca do candidato mais votado: (PT / PL /PSDB / PDT)');
+        let chosenParty = prompt('Digite um partido válido para a busca do candidato mais votado: (PT | PL | PSDB | PDT)');
         while(!partyOptions.includes(chosenParty.toUpperCase())) {
             alert('Digite um nome de partido válido!');
-            let chosenParty = prompt('Digite um partido válido para a busca do candidato mais votado: (PT / PL /PSDB / PDT)');
+            chosenParty = prompt('Digite um partido válido para a busca do candidato mais votado: (PT | PL | PSDB | PDT)');
         }
 
         let mostVotedCandidateParty = candidates.filter((candidate) => candidate.party === chosenParty).sort((candidateA, candidateB) => candidateA.votesQtt - candidateB.votesQtt)[candidates.length - 1];
