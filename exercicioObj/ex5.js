@@ -3,7 +3,7 @@ function calc() {
     let bikes = [];
 
     //Cadastro das 10 bikes
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
         let bike = {};
 
         bike.brand = prompt(`Digite a marca da ${i + 1}º bike: (CALOI | SCOTT | CANONDALE)`);
