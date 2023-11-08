@@ -137,7 +137,12 @@ function ex15() {
 
 // 16. Receba  duas  frases  distintas  e  imprima  de  maneira  invertida, trocando as letras A por *.
 function ex16(text1, text2) {
-    tText1 = tText1.replaceAll(/a/gi, '*')
-    tText2 = tText2.replaceAll(/a/gi, '*')
+    let tText1 = text1.replaceAll(/a/gi, '*')
+    let tText2 = text2.replaceAll(/a/gi, '*')
     console.log(`${tText1.split('').reverse().join('')}${tText2.split('').reverse().join('')}`)
+}
+
+// 17. Recebe uma string S e inteiros na˜o-negativos I e J e imprima o segmento S[I..J].
+function ex17() {
+    
 }
